@@ -1,0 +1,71 @@
+/* Smooth, spring-like transition for the touch/hover movement */
+.highlight-wrapper {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.highlight-bg {
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* Enhancing the touch effect to physically move up and scale */
+.touch-effect {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.touch-effect .highlight-bg {
+    box-shadow: 0 12px 35px rgba(70, 147, 229, 0.6);
+}
+
+/* Keyframes for the stars to twinkle and rotate slightly */
+@keyframes twinkle {
+    0%, 100% { 
+        opacity: 1; 
+        transform: rotate(0deg) scale(1); 
+    }
+    50% { 
+        opacity: 0.6; 
+        transform: rotate(15deg) scale(0.85); 
+    }
+}
+
+/* Apply the animation to both the top star and subtitle stars */
+.star-i, .stars {
+    animation: twinkle 3s infinite ease-in-out;
+    transform-origin: center;
+}
+
+/* --- Star Rotation Animation --- */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spin-star {
+    display: inline-block;
+    animation: spin 3s linear infinite; 
+    transform-origin: center;
+}
+/* Card Hover Effect */
+.glass-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, opacity 0.4s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--pf-accent);
+}
+
+/* Filter Button Hover */
+.filter-btn {
+  transition: all 0.3s ease;
+}
+.filter-btn:hover:not(.active) {
+  border-color: var(--pf-accent);
+  color: var(--pf-text-main);
+}
+
+/* Hide/Show Animation Classes (Used in JS) */
+.portfolio-item.hidden {
+  display: none;
+}

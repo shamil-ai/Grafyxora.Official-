@@ -1,0 +1,492 @@
+/* --- Global Styles --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* Rich dark green/teal gradient background from image */
+    background: linear-gradient(180deg, #051410 0%, #092e25 100%);
+    background-attachment: fixed;
+    /* Main text color to white for contrast */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* --- Navigation --- */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo-container .site-logo {
+    height: 35px;
+    width: auto;
+}
+
+.nav-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    /* Light grey-teal text for nav */
+    color: #f0f0f0;
+    font-weight: 400;
+}
+/* Keeps the Hero Section centered and full height */
+.hero-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.about-image-area {
+    width: 100%;
+    max-width: 380px; /* Maximum size for desktop. You can reduce this (e.g., to 300px) if you want it smaller */
+    margin: 0 auto;
+}
+
+.portrait-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Locks the image into a perfect portrait shape */
+    border-radius: 20px; /* Rounds the corners */
+    overflow: hidden;
+}
+
+.portrait-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image doesn't stretch or squish */
+}
+
+
+/* Constrains the About Section so it doesn't stretch too wide */
+.about-section {
+    width: 100%;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.about-content {
+    max-width: 1100px; /* Keeps the content contained on wide laptop screens */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* Places the text and image side-by-side */
+    align-items: center;
+    gap: 60px;
+}
+
+
+/* --- Hero Section & Title Highlights --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.portfolio-title {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    color: #ffffff; /* Initial part "PORTF" is white */
+}
+
+.text-part {
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.2em;
+    margin-left: 0.05em;
+    color: #16c79a; /* Highlights/accent color for the next word part */
+}
+
+/* Positioning the star above the I */
+.i-wrapper {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.star-i {
+    position: absolute;
+    top: -0.45em;
+    font-size: 0.45em;
+    line-height: 1;
+    color: #ffffff; /* Stars on white part are white */
+}
+
+/* The highlighted part of the title - changes from a bar to the accent color for text */
+.highlight-bg {
+    position: absolute;
+    top: 48%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    height: 1.3em;
+    /* Remove original gradient, use subtle cyan fill */
+    background: transparent;
+    border-radius: 100px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Removed noise overlay as per image simplicity */
+.highlight-bg::after {
+    display: none;
+}
+
+/* Word part inside highlight wrapper - changes color to accent */
+.olio-text {
+    color: #16c79a;
+}
+
+.i-wrapper .star-i {
+    color: #16c79a; /* Star over cyan "I" is also cyan */
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.stars {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    color: #16c79a; /* Subtitle stars are accent color */
+}
+
+.scroll-indicator {
+    margin-top: 5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    /* Keep scroll indicator text white, possibly a grey-teal for subtlety */
+    color: #f0f0f0;
+}
+
+/* --- About Section & Skills --- */
+.about-section {
+    padding: 80px 20px;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.about-text-area {
+    flex: 1;
+}
+
+/* Faded background text - very subtle against the dark background */
+.hello-bg-text {
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03);
+    line-height: 0.5;
+    margin-left: -5px;
+    letter-spacing: 0.05em;
+}
+
+.about-text-area h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.about-text-area p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    /* Light grey-teal text */
+    color: #e0e0e0;
+    font-weight: 400;
+}
+
+/* --- Tools Grid & Icons --- */
+.tools-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tool-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px; /* Curved borders just like your design */
+    overflow: hidden;
+    background: transparent;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps the image from stretching outside the box */
+}
+
+.tool-info span {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 3px;
+    color: #ffffff;
+}
+
+.stars-rating {
+    font-size: 0.8rem;
+    color: #333;
+    display: flex; /* Aligns items in a row */
+    flex-direction: row;
+    gap: 2px;
+}
+
+.stars-rating .spin-star {
+    /* Fill stars with accent color */
+    color: #16c79a;
+}
+
+.stars-rating .outline {
+    /* Outline stars use a darker grey-teal */
+    color: #333333;
+}
+
+/* --- Projects Specific Styling --- */
+.skills-section {
+    padding: 80px 20px;
+}
+
+.skills-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
+}
+
+/* Wrappers to position the star over the J */
+.skills-title .j-wrapper {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.skills-title .star-j {
+    position: absolute;
+    top: -0.45em;
+    font-size: 0.5em;
+    color: #16c79a; /* Cyan star over text */
+    
+    /* Optional: Uncomment the line below and adjust the number 
+       if the star needs to move slightly left or right over the J */
+    /* margin-left: 5px; */ 
+}
+
+
+/* Button Styling matching your design - change to accent button */
+.neon-btn {
+    padding: 0.8rem 2.5rem;
+    /* Accent color background like active buttons in image */
+    background: #16c79a;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ffffff; /* White text for contrast */
+    cursor: pointer;
+    /* Cyan glow from the screenshot */
+    box-shadow: 0 4px 15px rgba(22, 199, 154, 0.4);
+    transition: all 0.3s ease;
+}
+
+.neon-btn:hover {
+    box-shadow: 0 0 15px rgba(22, 199, 154, 0.6);
+    transform: translateY(-3px);
+}
+
+/* --- Skill Card Text Styling --- */
+.skill-card {
+    /* Dark green/teal card background from image */
+    background: #112420;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.skill-card h3 {
+    /* Cyan accent heading text like card headlines */
+    color: #16c79a;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.skill-card p {
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* --- Mobile Responsiveness (Place at the very bottom of layout.css) --- */
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column-reverse; /* Stacks the image on top and text on the bottom */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-image-area {
+        max-width: 250px; /* Makes the image much smaller specifically for mobile */
+    }
+
+    /* Prevents the large 'PORTFOLIO' text from pushing off the edge of the screen */
+    .portfolio-title {
+        flex-wrap: wrap;
+        justify-content: center;
+        line-height: 1.2;
+    }
+}
+/* --- Filter Buttons Styling --- */
+.portfolio-filters { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 30px; 
+    flex-wrap: wrap; 
+}
+
+.filter-btn { 
+    background: transparent; 
+    color: #a8b8b4; /* Muted grey/teal text */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 8px 20px; 
+    border-radius: 30px; /* Gives the button a pill shape */
+    cursor: pointer; 
+    transition: 0.3s ease; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Active button state (Cyan background) */
+.filter-btn.active, .filter-btn:hover { 
+    background: #16c79a; 
+    color: #051410; 
+    border-color: #16c79a; 
+    font-weight: 600;
+}
+
+/* --- Project Cards Box Effect --- */
+.portfolio-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+}
+
+/* This creates the dark box effect */
+.glass-card {
+    background-color: #112420; /* Dark green/teal background */
+    padding: 25px; /* Inner spacing */
+    border-radius: 16px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle outline border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect when you move the mouse over the card */
+.glass-card:hover {
+    transform: translateY(-6px); /* Lifts the card up slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Adds a shadow beneath it */
+}
+
+/* Text styling inside the cards */
+.portfolio-tag {
+    display: block;
+    font-size: 0.8rem;
+    color: #a8b8b4;
+    margin-bottom: 8px;
+}
+
+.glass-card h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.glass-card p {
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Ensure cards start hidden */
+.glass-card {
+    display: none;
+}
+.close-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Makes it a circle */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.close-btn:hover {
+    background: #ff4757; /* Turns red when hovered */
+    border-color: #ff4757;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(5, 20, 16, 0.95); /* Dark teal background */
+}
+
+.modal-content {
+    margin: 10% auto; padding: 20px; width: 80%; max-width: 600px;
+    background: #112420; border-radius: 16px; text-align: center; color: white;
+}
+
+.close-modal {
+    float: right; font-size: 2rem; cursor: pointer; color: #16c79a;
+}
+
+.modal-content img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
